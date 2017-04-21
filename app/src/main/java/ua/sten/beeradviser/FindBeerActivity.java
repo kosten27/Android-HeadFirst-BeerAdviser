@@ -25,9 +25,9 @@ public class FindBeerActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 List<String> brandsL = new BeerExpert().getBrands(color.getSelectedItem().toString());
-                String brandsStr = "";
-                for(int i = 0; i < brandsL.size(); i++) {
-                    brandsStr += brandsL.get(i) + "\n";
+                StringBuilder brandsStr = new StringBuilder();
+                for(String brand : brandsL) {
+                    brandsStr.append(brand).append('\n');
                 }
                 brands.setText(brandsStr);
             }
